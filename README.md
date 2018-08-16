@@ -1,14 +1,12 @@
 # Vim Project
 Really short project, to save and update my vim custom configuration over time.
 
-Work for RedHat, Debian MacOSx based OS
-
-if you have another based OS please run init.sh with your package manager:
-	-	./init.sh pacman (example for Arch Linux)
-
-Usage: 
-	- Clone prject
-	- run init.sh script
+Usage for RedHat, Debian MacOSx based OS: 
+* Clone prject
+* run init.sh script
+	
+Usage for an another based OS please run init.sh with your package manager:
+* ./init.sh pacman (example for Arch Linux)
 
 Thanks to:
  * Kristijan Husak for the color scheme
