@@ -22,13 +22,10 @@ then
 	./vim.sh "$package_manager"
 elif [ $(which brew) ]
 then
-	if brew ls --versions myformula > /dev/null;
-	then
-		echo -e "Detect Mac based OS\n"
-		package_manager=$(which brew)	
-		#Excute vim Installation Script with brew as package manager
-		./vim.sh "$package_manager"
-	fi
+	echo -e "Detect Mac based OS\n"
+	package_manager=$(which brew)	
+	#Excute vim Installation Script with brew as package manager
+	./vim.sh "$package_manager"
 else
 	if [ -z $1 ];
 	then 
