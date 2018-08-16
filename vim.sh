@@ -39,4 +39,8 @@ then
         git clone --recursive https://github.com/davidhalter/jedi-vim.git $vim_folder/bundle/jedi-vim
 fi
 
+#Copy vimrc, color theme and indention for Yaml
+cp .vimrc $HOME/.vimrc
+cp -R .vim/* $HOME/.vim
+ 
 echo -e "Your Vim Configuration is OK !\n"

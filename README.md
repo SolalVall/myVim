@@ -1,7 +1,14 @@
 # Vim Project
 Really short project, to save and update my vim custom configuration over time.
 
-Usage: Just have to clone it in your home directory AND RUN INIT.SH SCRIPT for installing structure, pathogen and plugins.
+Work for RedHat, Debian MacOSx based OS
+
+if you have another based OS please run init.sh with your package manager:
+	-	./init.sh pacman (example for Arch Linux)
+
+Usage: 
+	- Clone prject
+	- run init.sh script
 
 Thanks to:
  * Kristijan Husak for the color scheme
