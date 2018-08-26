@@ -6,6 +6,8 @@ package_manager=$1
 vim_folder="$HOME/.vim"
 pathogen="$vim_folder/autoload/pathogen.vim"
 jedi_vim="$vim_folder/bundle/jedi-vim"
+lightline_vim="$vim_folder/bundle/lightline.vim"
+delimitMate_vim="$vim_folder/bundle/delimitMate.vim"
 
 #Start vim configuration
 #Check if vim exist
@@ -32,12 +34,28 @@ then
 fi
 
 #Check for plugins
+
 if [ ! -d $jedi_vim ];
 then
         #Download/Install Jedi-vim
         echo -e "Jedi-vim is not installed, start install....\n"
         git clone --recursive https://github.com/davidhalter/jedi-vim.git $vim_folder/bundle/jedi-vim
 fi
+
+if [ ! -f $lightline_vim ];
+then
+        #Download/Install Jedi-vim
+        echo -e "lightline is not installed, start install....\n"
+				git clone https://github.com/itchyny/lightline.vim $vim_folder/bundle/lightline.vim
+fi
+
+if [ ! -f $delimitMate_vim ];
+then
+        #Download/Install Jedi-vim
+        echo -e "lightline is not installed, start install....\n"
+				git clone https://github.com/Raimondi/delimitMate $vim_folder/bundle/delimitMate.vim
+fi
+
 
 #Copy vimrc, color theme and indention for Yaml
 cp .vimrc $HOME/.vimrc
