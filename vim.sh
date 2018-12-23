@@ -8,19 +8,17 @@ pathogen="$vim_folder/autoload/pathogen.vim"
 jedi_vim="$vim_folder/bundle/jedi-vim"
 lightline_vim="$vim_folder/bundle/lightline.vim"
 delimitMate_vim="$vim_folder/bundle/delimitMate.vim"
+syntastic_vim="$vim_folder/bundle/syntastic.vim"
 
 #Start vim configuration
-#Check if vim exist
 if [ -z $(which vim) ];
 then
-        #Install Vim
         $package_manager install vim
 fi
 
 #Check if vim directories structure exist
 if [ ! -d $vim_folder ];
 then
-        #Create structure for vim,pathogen and plugins (bundle)
         echo -e "Vim structure doesn't exist, let's install it....\n"
         mkdir -p ~/.vim/autoload ~/.vim/bundle
 fi
@@ -28,33 +26,35 @@ fi
 #Check for pathogen
 if [ ! -f $pathogen ];
 then
-        #Download/Install pahtogen
         echo -e "Pathogen is not installed, start install....\n"
         curl -LSso $vim_folder/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 fi
 
 #Check for plugins
-
 if [ ! -d $jedi_vim ];
 then
-        #Download/Install Jedi-vim
         echo -e "Jedi-vim is not installed, start install....\n"
         git clone --recursive https://github.com/davidhalter/jedi-vim.git $vim_folder/bundle/jedi-vim
 fi
 
-if [ ! -f $lightline_vim ];
+if [ ! -d $lightline_vim ];
 then
-        #Download/Install Jedi-vim
         echo -e "lightline is not installed, start install....\n"
 				git clone https://github.com/itchyny/lightline.vim $vim_folder/bundle/lightline.vim
 fi
 
-if [ ! -f $delimitMate_vim ];
+if [ ! -d $delimitMate_vim ];
 then
-        #Download/Install Jedi-vim
-        echo -e "lightline is not installed, start install....\n"
+        echo -e "delimitMate is not installed, start install....\n"
 				git clone https://github.com/Raimondi/delimitMate $vim_folder/bundle/delimitMate.vim
 fi
+
+if [ ! -d $syntastic_vim ];
+then
+        echo -e "lightline is not installed, start install....\n"
+				git clone --depth=1 https://github.com/vim-syntastic/syntastic.git $vim_folder/bundle/syntastic.vim
+fi
+
 
 
 #Copy vimrc, color theme and indention for Yaml
