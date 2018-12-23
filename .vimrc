@@ -12,8 +12,8 @@ let g:enable_italic_font = 1
 colorscheme hybrid_material
 
 " config of synstatic plugin
-" With my config to have for having a list of errors
-" in a python file for exemple, you have to type :Errors
+" With my config for having a list of errors, for example
+" in a python. You have to type :Errors
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
